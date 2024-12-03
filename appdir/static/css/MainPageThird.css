@@ -1,0 +1,549 @@
+@font-face {
+    font-family: 'VelaSansGX';
+    src: url('../fonts/velasansgx-extralight.woff2') format('woff2'),
+         url('../fonts/velasansgx-extralight.woff') format('woff');
+    font-weight: normal; /* можно указать bold или другие значения */
+    font-style: normal; /* можно указать italic, oblique или другие значения */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'VelaSansGX', sans-serif;
+    background-color: rgba(253, 251, 255, 1);
+}
+
+.wrapper {
+    display: flex;
+}
+
+.option_sidebar_wrapper {
+    width: 311px;
+    min-height: 100vh;
+    background-color: rgba(242, 245, 252, 1);
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-item {
+    width: 70%; /* Ширина элемента сайдбара */
+    margin: 5px 0; /* Отступы по вертикали */
+    background-color: rgba(242, 245, 252, 1);
+    border-radius: 22px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center; /* Центрирование содержимого */
+}
+
+.sidebar-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0; /* Вертикальные отступы внутри элементов */
+}
+
+.sidebar-item_main  .sidebar-content {
+    justify-content: center; /* Центрирование текста для главной страницы */
+}
+
+.sidebar-item a {
+    width: 100%;
+    height: 100%; /* Ссылка занимает всю высоту элемента */
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+}
+
+.sidebar-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px; /* Отступ между иконкой и текстом */
+}
+
+.sidebar-text {
+    font-size: 16px;
+    text-align: left; /* Выравнивание текста по левому краю */
+}
+
+.sidebar-item .sidebar-text{
+    font-size: 20px;
+}
+
+.sidebar-item_main {
+    background-color: rgba(69, 54, 245, 1);
+    padding: 1px 48px 1px 48px;
+    border-radius: 22px;
+    margin-bottom: 45px;
+}
+
+.sidebar-item_main .sidebar-text {
+    color: #fff;
+}
+
+.sidebar-items {
+    width: 100%; /* Контейнер для элементов сайдбара */
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px 355px 20px 50px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 10px 45px 5px 45px;
+}
+
+.stat-item {
+    flex: 1;
+    padding: 8px 0px 8px 20px;
+    margin-right: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.stat-item:last-child {
+    margin-right: 0;
+}
+
+.stat_count {
+    font-size: 58px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+.stat_name {
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+
+.completed {
+    background-color: rgba(93, 181, 97, 1);
+}
+
+.pending2 {
+    background-color: rgba(69, 54, 245, 1);
+}
+
+.reviewing {
+    background-color: rgba(186, 186, 186, 1);
+}
+
+.overdue {
+    background-color: rgba(208, 60, 83, 1);
+}
+
+.header_main_page {
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.header_main_page_text {
+    padding-left: 40px;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.background_circle_icon_exclamation{
+    width: 44px;
+    height: 44px;
+    background-color: rgba(208, 60, 83, 1);
+    border-radius: 22px;
+    margin-right: 20px; 
+    display: flex; /* Добавлено для центрирования иконки */
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+}
+
+.background_circle_icon_whitestar{
+    width: 44px;
+    height: 44px;
+    background-color: rgba(69, 54, 245, 1);
+    border-radius: 22px;
+    margin-right: 20px; 
+    display: flex; /* Добавлено для центрирования иконки */
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+}
+
+.background_circle_icon_heart{
+    width: 44px;
+    height: 44px;
+    background-color: rgba(93, 181, 97, 1);
+    border-radius: 22px;
+    margin-right: 20px; 
+    display: flex; /* Добавлено для центрирования иконки */
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+}
+
+.notifications {
+    padding: 10px 45px 25px 45px;
+}
+
+/*.notification-item {
+    background-color: rgba(242, 245, 252, 1);
+    padding: 20px 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}*/
+
+.notification-item {
+    display: flex; /* Выстраиваем элементы в линию */
+    align-items: center; /* Центрируем по вертикали */
+    justify-content: space-between; /* Распределяем пространство между элементами */
+    background-color: rgba(242, 245, 252, 1);
+    padding: 20px; /* Общее пространство внутри элементов */
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.notification-item_text {
+    font-size: 16px; /* Уменьшенный шрифт для текста уведомления */
+    font-weight: bold; /* Полужирный шрифт */
+    margin-bottom: 14px; /* Отступ между текстом и опциями */
+}
+
+.notifications_main_text {
+    font-weight: bold;
+    font-size: 36px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.notification_item_options {
+    display: flex; /* Flex для выравнивания опций */
+    gap: 10px; /* Расстояние между опциями */
+    align-items: center; /* Центрирование опций по вертикали */
+    flex-wrap: wrap; /* Опции переносятся на новую строку, если не хватает места */
+}
+
+.notification_item_option {
+    font-size: 15px;
+    color: rgba(80, 77, 82, 1);
+    cursor: pointer; /* Курсор указатель для интерактивных элементов */
+}
+
+.notification_item_option_last {
+    margin-left: auto;
+    font-size: 15px;
+    color: rgba(80, 77, 82, 1);
+    cursor: pointer; /* Курсор указатель для интерактивных элементов */
+    right: 0;
+    text-decoration-line: underline;
+}
+
+.notification_item_grade {
+    display: flex; /* Flexbox для выравнивания текста внутри */
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+    width: 126px;
+    height: 34px;
+    padding: 5px;
+    background-color: rgba(244, 206, 90, 1);
+    border-radius: 17px;
+    font-size: 15px;
+    color: #fff;
+}
+
+.notification-item_content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between; /* Растягиваем на все доступное пространство */
+}
+
+.inside_circle_icon_whitestar{
+    width: 24px;
+    height: 24px;
+}
+
+.inside_circle_icon_heart{
+    width: 20px;
+    height: 20px;
+}
+
+
+.inside_circle_icon_exclamation{
+    width: 4px;
+    height: 24px;
+}
+
+.decorative-block {
+    position: absolute; /* Устанавливаем абсолютное позиционирование для контейнера */
+    top: 0px; /* Позиционируем его выше блока */
+    left: 51%; /* Центрируем по горизонтали */
+    transform: translateX(-18%); /* Сдвигаем влево на половину ширины SVG для центрирования */
+    overflow: hidden; /* Скрываем все, что выходит за пределы блока */
+    pointer-events: none;
+    width: 100%; /* Устанавливаем ширину блока, чтобы он занимал всю ширину родителя */
+}
+
+.decorative-svg {
+    width: 124px; /* Установите ширину SVG, если нужно */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    pointer-events: none; /* Отключаем взаимодействие с элементом */
+    opacity: 0.6; /* Устанавливаем прозрачность, если нужно */
+}
+
+.decorative-block-start {
+    position: absolute;
+    bottom: -5px;
+    right: 14%;
+    transform: translateX(-18%);
+    overflow: hidden;
+    width: 100%;
+}
+
+.decorative-start-svg {
+    width: 84px;
+    height: auto;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.toggle-sidebar { 
+    display: none; 
+} 
+
+.scroll-notification {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 3px;
+}
+
+.scroll-notification::-webkit-scrollbar {
+    width: 3px;
+}
+
+.scroll-notification::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scroll-notification::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px; 
+}
+
+.scroll-notification::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.toggle-sidebar { 
+    display: none; 
+    /* Показываем кнопку для открытия сайдбара */ 
+} 
+
+.close-sidebar{
+    display: none;
+}
+
+@media (min-width: 1921px) {
+    .decorative-block{
+        width: 100%; /* Увеличиваем ширину блока с SVG */
+        transform: translateX(-10%); /* Корректируем сдвиг для центрирования */
+    }
+
+    .decorative-block-start {
+        width: 115%; /* Увеличиваем ширину блока с SVG */
+        transform: translateX(-10%); /* Корректируем сдвиг для центрирования */
+    }
+
+    .decorative-svg,
+    .decorative-start-svg {
+        width: 110px; /* Увеличиваем ширину SVG, если нужно */
+    }
+}
+
+.sorting-options {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 10px;
+}
+
+.sorting-item {
+    position: relative;
+    margin-right: 10px;
+}
+
+.sorting-button {
+    background-color: #f2f5fc;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.sorting-button:hover {
+    background-color: #e0e4f2;
+}
+
+.notification-block {
+    position: absolute; /* Абсолютное позиционирование */
+    background-color: rgba(93, 181, 97, 1); /* Зеленый фон */
+    border-radius: 15px; /* Круглая форма */
+    padding: 3px 8px;
+    display: flex; /* Flexbox для центрирования содержимого */
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+    color: white; /* Цвет текста */
+    font-weight: bold; /* Полужирный шрифт */
+    font-size: 14px; /* Размер шрифта */
+    top: -15px; /* Позиционирование сверху */
+    left: -5px; /* Позиционирование слева */
+}
+
+.sorting-item-button {
+    position: relative;
+    margin-right: 8px;
+    margin-left: auto;
+}
+
+.sorting-button-create {
+    background-color: rgba(69, 54, 245, 1);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    right: 0;
+}
+
+@media (max-width: 768px) { 
+ 
+    .body { 
+        overflow-x: hidden; 
+    } 
+ 
+    .header_main_page_text { 
+        font-size: 24px; 
+        padding-left: 10px; 
+    } 
+ 
+    .notifications_main_text { 
+        font-size: 24px; 
+    } 
+ 
+    .notifications { 
+        padding: 10px 25px 25px 25px 
+    } 
+
+    .notification-item_text{
+        font-size: 18px;
+    }
+ 
+    .wrapper { 
+        flex-direction: column; 
+        /* Изменяем направление на колонку */ 
+        max-width: 100vw; 
+        /* Ограничить ширину до 100% ширины окна */ 
+        overflow-x: hidden; 
+        /* Скрыть горизонтальную прокрутку */ 
+ 
+    } 
+ 
+    .toggle-sidebar { 
+        display: block; 
+        /* Показываем кнопку для открытия сайдбара */ 
+    } 
+ 
+    .stats { 
+        padding: 10px 20px; 
+        /* Уменьшаем отступы для мобильных устройств */ 
+        overflow-x: auto; 
+        /* Позволяет горизонтальную прокрутку */ 
+        white-space: nowrap; 
+        /* Запрещает перенос строк */ 
+    } 
+ 
+    .stat_count { 
+        font-size: 36px; 
+    } 
+ 
+    .stat_name { 
+        font-size: 16px; 
+    } 
+ 
+    .stat-item { 
+        padding: 15px 20px 15px 20px; 
+    } 
+
+    .option_sidebar_wrapper { 
+        position: fixed; 
+        top: 0;
+        left: -100%;
+        width: 100%;
+        transition: left 0.3s ease; 
+        height: 100%;
+        z-index: 1000; 
+        /* Устанавливаем уровень z для сайдбара */ 
+    } 
+ 
+    .option_sidebar_wrapper.active { 
+        left: 0; 
+        /* Показываем сайдбар */ 
+    } 
+ 
+    .main-content { 
+        padding: 30px 0px 0px 0px; 
+    } 
+ 
+   .toggle-sidebar { 
+        display: block; 
+        position: absolute; 
+        top: 0px; 
+        right: 10px; 
+        color: rgba(69, 54, 245, 1); 
+        border: none; 
+        border-radius: 5px; 
+        padding: 10px; 
+        cursor: pointer; 
+        z-index: 1; 
+        font-size: 24px;
+        background-color: transparent; 
+    } 
+
+    .close-sidebar {
+        display: block; 
+        position: absolute;
+        top: 5px; /* Отступ сверху */
+        right: 10px; /* Отступ справа */
+        font-size: 24px; /* Размер шрифта */
+        cursor: pointer; /* Курсор в виде указателя */
+        color: rgba(69, 54, 245, 1); /* Цвет крестика */
+        border: none; 
+        background-color: transparent; 
+    }
+
+    .scroll-notification {
+        max-height: 500px; /* Установите желаемую максимальную высоту */
+        padding-right: 0px; /* Добавьте отступ, чтобы текст не прилипал к полосе прокрутки */
+    }
+
+    .scroll-notification::-webkit-scrollbar {
+        width: 0px; /* Ширина полосы прокрутки */
+    }
+}
+

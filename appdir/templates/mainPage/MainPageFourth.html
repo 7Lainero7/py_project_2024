@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="../../assets/css/MainPageFourth.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vela+Sans+GX:wght@400;700&display=swap">
+</head>
+
+<body>
+    <script src="../../assets/js/sidebar.js"></script>
+    <div class="wrapper">
+        <!-- Сайдбар -->
+        <button class="toggle-sidebar">≡</button>
+        <div class="option_sidebar_wrapper">
+
+            <button class="close-sidebar">✖</button>
+            <!-- Главная страница -->
+            <div class="sidebar-item_main">
+                <div class="sidebar-content">
+                    <span class="sidebar-text">Главная страница</span>
+                </div>
+            </div>
+            <!-- Остальные элементы сайдбара -->
+            <div class="sidebar-items">
+                <div class="sidebar-item">
+                    <a href="#">
+                        <div class="sidebar-content">
+                            <div class="sidebar-icon">
+                                <img src="../../assets/image/bakalavr.svg" alt="Календарь">
+                            </div>
+                            <span class="sidebar-text">Успеваемость учеников</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="#">
+                        <div class="sidebar-content">
+                            <div class="sidebar-icon">
+                                <img src="../../assets/image/pen.svg" alt="Успеваемость учителей">
+                            </div>
+                            <span class="sidebar-text">Успеваемость учителей</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="#">
+                        <div class="sidebar-content">
+                            <div class="sidebar-icon">
+                                <img src="../../assets/image/plus.svg" alt="Дополнительный материал">
+                            </div>
+                            <span class="sidebar-text">Дополнительный материал</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="#">
+                        <div class="sidebar-content">
+                            <div class="sidebar-icon">
+                                <img src="../../assets/image/pen.svg" alt="Ученики">
+                            </div>
+                            <span class="sidebar-text">Ученики</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="#">
+                        <div class="sidebar-content">
+                            <div class="sidebar-icon">
+                                <img src="../../assets/image/pen.svg" alt="Учителя">
+                            </div>
+                            <span class="sidebar-text">Учителя</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="#">
+                        <div class="sidebar-content">
+                            <div class="sidebar-icon">
+                                <img src="../../assets/image/material.svg" alt="Материал">
+                            </div>
+                            <span class="sidebar-text">Материал</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="#">
+                        <div class="sidebar-content">
+                            <div class="sidebar-icon">
+                                <img src="../../assets/image/calendar.svg" alt="Календарь">
+                            </div>
+                            <span class="sidebar-text">Календарь</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="#">
+                        <div class="sidebar-content">
+                            <div class="sidebar-icon">
+                                <img src="../../assets/image/setting.svg" alt="Настройки">
+                            </div>
+                            <span class="sidebar-text">Настройки</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Основной контент -->
+        <div class="main-content">
+            <header class="header_main_page">
+                <div class="header_main_page_text">Главная страница</div>
+            </header>
+
+            <div class="stats">
+                <div class="stat-item completed">
+                    <div class="decorative-block-start">
+                        <img src="../../assets/image/decorative-start.svg" alt="Частые вопросы"
+                            class="decorative-start-svg">
+                    </div>
+                    <div class="decorative-block">
+                        <img src="../../assets/image/decorative.svg" alt="Частые вопросы" class="decorative-svg">
+                    </div>
+                    <h2 class="stat_count">100</h2>
+                    <p class="stat_name">Выполненных заданий</p>
+                </div>
+                <div class="stat-item pending2">
+                    <div class="decorative-block-start">
+                        <img src="../../assets/image/decorative-start.svg" alt="Частые вопросы"
+                            class="decorative-start-svg">
+                    </div>
+                    <div class="decorative-block">
+                        <img src="../../assets/image/decorative.svg" alt="Частые вопросы" class="decorative-svg">
+                    </div>
+                    <h2 class="stat_count">36</h2>
+                    <p class="stat_name">Заданий ожидают работы</p>
+                </div>
+            </div>
+
+            <div class="notifications">
+                <h3 class="notifications_main_text">Уведомления</h3>
+
+                <div class="sorting-options">
+                    <div class="sorting-item">
+                        <div class="notification-block">
+                            <span class="notification-number">10</span>
+                        </div>
+                        <button class="sorting-button">Просрочка</button>
+                    </div>
+                    <div class="sorting-item">
+                        <div class="notification-block">
+                            <span class="notification-number">3</span>
+                        </div>
+                        <button class="sorting-button">Общее</button>
+                    </div>
+                    <div class="sorting-item">
+                        <div class="notification-block">
+                            <span class="notification-number">4</span>
+                        </div>
+                        <button class="sorting-button">От директора</button>
+                    </div>
+                    <div class="sorting-item-button">
+                        <button class="sorting-button-create">Создать</button>
+                    </div>
+                </div>
+
+                <div class="main-four-body">
+                    <div class="main-four-header">
+                        <h2>Создание уведомлений</h2>
+                    </div>
+                    <div class="main-four-section">
+                        <div class="form-container">
+                            <div class="form-item">
+                                <label for="input1">Показывать с:</label>
+                                <input type="text" id="input1" class="form-input">
+                            </div>
+                            <div class="form-item">
+                                <label for="input2">Показывать до:</label>
+                                <input type="text" id="input2" class="form-input">
+                            </div>
+                            <div class="form-item">
+                                <label for="select">Для кого</label>
+                                <select id="select" class="form-select">
+                                    <option value="" disabled selected>Выберите</option>
+                                    <option value="option2">Опция 2</option>
+                                    <option value="option3">Опция 3</option>
+                                    <option value="option4">Опция 1</option>
+                                    <option value="option5">Опция 2</option>
+                                    <option value="option6">Опция 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-item-textarea">
+                            <label for="textarea">Текст</label>
+                            <textarea id="textarea" class="form-textarea"></textarea>
+                        </div>
+
+                        <div class="main-four-summary">
+                            <div class="action-buttons">
+                                <button class="btn-back">Опубликовать</button>
+                                <button class="btn-buy">Список показывающихся</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,728 @@
+@font-face {
+    font-family: 'VelaSansGX';
+    src: url('../fonts/velasansgx-extralight.woff2') format('woff2'),
+         url('../fonts/velasansgx-extralight.woff') format('woff');
+    font-weight: normal; /* можно указать bold или другие значения */
+    font-style: normal; /* можно указать italic, oblique или другие значения */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'VelaSansGX', sans-serif;
+    background-color: rgba(253, 251, 255, 1);
+}
+
+.wrapper {
+    display: flex;
+}
+
+.option_sidebar_wrapper {
+    width: 311px;
+    min-height: 100vh;
+    background-color: rgba(242, 245, 252, 1);
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-item {
+    width: 70%; /* Ширина элемента сайдбара */
+    margin: 5px 0; /* Отступы по вертикали */
+    background-color: rgba(242, 245, 252, 1);
+    border-radius: 22px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center; /* Центрирование содержимого */
+}
+
+.sidebar-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0; /* Вертикальные отступы внутри элементов */
+}
+
+.sidebar-item_main  .sidebar-content {
+    justify-content: center; /* Центрирование текста для главной страницы */
+}
+
+.sidebar-item a {
+    width: 100%;
+    height: 100%; /* Ссылка занимает всю высоту элемента */
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+}
+
+.sidebar-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px; /* Отступ между иконкой и текстом */
+}
+
+.sidebar-text {
+    font-size: 16px;
+    text-align: left; /* Выравнивание текста по левому краю */
+}
+
+.sidebar-item .sidebar-text{
+    font-size: 20px;
+}
+
+.sidebar-item_main {
+    background-color: rgba(69, 54, 245, 1);
+    padding: 1px 48px 1px 48px;
+    border-radius: 22px;
+    margin-bottom: 45px;
+}
+
+.sidebar-item_main .sidebar-text {
+    color: #fff;
+}
+
+.sidebar-items {
+    width: 100%; /* Контейнер для элементов сайдбара */
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.homeWork-content {
+    flex: 1;
+    padding: 30px 355px 20px 50px;
+}
+
+.homeWork-header {
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.homeWork-header-text {
+    padding-left: 40px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.homeWork-notifications {
+    padding: 10px 10px 25px 45px;
+}
+
+.homeWork-body {
+    background-color: rgba(242, 245, 252, 1);
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.homeWork-category {
+    margin-bottom: 10px;
+}
+
+.homeWork-category-header {
+    padding: 10px 20px; /* Adjust padding for consistent size */
+    width: auto;
+    background-color: rgba(242, 245, 252, 1);
+    border-radius: 20px 20px 0 0; /* Rounded corners for top */
+    display: inline-block;
+    font-size: 24px;
+    color: rgba(69, 54, 245, 1);
+    cursor: pointer;
+}
+
+.homeWork-category-body {
+    background-color: rgba(242, 245, 252, 1);
+    border-radius: 0px 20px 20px 20px;
+    padding: 10px 20px;
+    max-width: 740px;
+    transition: left 0.3s ease; 
+}
+
+.homeWork-category-text{
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+.homeWork-category-pictures{
+    padding-top: 15px;
+    /* display: flex;
+    justify-content: center;
+    overflow: hidden;  */
+}
+
+/* .pictures-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    width: 100%;
+}
+
+.pictures-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+} */
+
+.pictures-wrapper {
+    max-width: 100%; /* Ограничение ширины контейнера */
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.pictures-wrapper::-webkit-scrollbar {
+    width: 1px; /* Ширина полосы прокрутки */
+    height: 5px;
+}
+
+.pictures-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.pictures-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px; 
+}
+
+.pictures-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.pictures-wrapper img {
+    padding-left: 3px;
+}
+
+.homeWork-sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 63px;
+    padding-right: 45px;
+    max-width: 400px;
+}
+
+.homeWork-sidebar-section{
+    background-color: rgba(242, 245, 252, 1);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение элементов */
+    justify-content: flex-start; /* Элементы прижаты к началу */
+}
+
+.teacher-comments {
+    background-color: rgba(242, 245, 252, 1);
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.submit-button {
+    background-color: rgba(93, 181, 97, 1);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.submit-button-yellow-check {
+    background-color: rgba(244, 206, 90, 1);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.submit-button-red-check {
+    background-color: rgba(208, 60, 83, 1);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.submit-button-green {
+    background-color: rgba(93, 181, 97, 1);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.submit-button-yellow {
+    background-color: rgba(244, 206, 90, 1);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.submit-button-red {
+    background-color: rgba(208, 60, 83, 1);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.submit-button:hover {
+    background-color: rgba(93, 181, 50, 1);
+}
+
+.submit-button-check {
+    background-color: rgba(69, 54, 245, 1);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.submit-button-check:hover {
+    background-color: rgba(69, 54, 190, 1);
+}
+
+.form-item-textarea{
+    padding-top: 10px;
+}
+
+.form-textarea {
+    padding: 10px; /* Внутренние отступы */
+    border: none;
+    border-radius: 8px; /* Закругляем края */
+    font-size: 16px;
+    width: 100%; /* Растягиваем на всю ширину */
+    height: 100px; /* Устанавливаем высоту */
+    box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+    resize: none;
+}
+
+.form-textarea:focus {
+    outline: none; /* Убираем обводку при фокусе */
+}
+
+.pictures-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.deadline, .teacher-info {
+    margin-bottom: 15px;
+}
+
+.homeWork-content-wrapper{
+    display: flex;
+}
+
+.homeWork-acc-info{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 7px;
+    text-align: right;
+}
+
+.homeWork-acc-info-cell{
+    text-align: left;
+}
+
+.homeWork-acc-info-cell-right{
+    text-align: right;
+}
+
+.homeWork-info-status {
+    max-width: 366px;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение элементов */
+    justify-content: flex-start; /* Элементы прижаты к началу */
+    margin-left: 10px; /* Отступ между блоками */
+    background-color: #f2f5fc; /* Светло-голубой фон */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.homeWork-section-span{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-decoration: underline;
+}
+
+.homeWork-section-span-check{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.bold-span{
+    font-weight: bold;
+}
+
+.teacher-comments-header{
+    font-size: 18px;
+}
+
+.teacher-comments-info{
+    padding-top: 10px;
+    color: rgba(80, 77, 82, 1);
+}
+
+.teacher-comments-text{
+    padding-top: 10px;
+}
+
+.teacher-comments-block{
+    padding-top: 10px;
+}
+
+.homeWork-category-text p{
+    color: rgba(69, 54, 245, 1);
+    font-size: 14px;
+}
+
+.submit-button-red-check p{
+    padding-top: 10px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 400;
+}
+
+.submit-button p{
+    padding-top: 10px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 400;
+}
+
+.homeWork-category-body.hidden {
+    display: none;
+}
+
+/* Стили для свернутого заголовка */
+.homeWork-category-header.collapsed {
+    background-color: transparent; /* Белый фон */
+    cursor: pointer;
+    color: #000000; /* Черный текст */
+}
+
+.homeWork-category-header.collapsed .icon_openClose{
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.homeWork-category-header .icon_openClose{
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.homeWork-category-header.collapsed .icon_openClose {
+    transform: rotate(180deg); /* Поворот иконки на 180 градусов */
+    filter: invert(0) brightness(0);
+    color: #000;
+}
+
+.teacherPage-buttons {
+    align-items: center; /* Align items vertically centered */
+}
+
+.teacherPage-button-outline {
+    border: 2px solid rgba(69, 54, 245, 1);
+    background-color: transparent; /* Transparent background */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition effects */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.teacherPage-button-outline:hover {
+    background-color: rgba(69, 54, 245, 0.1); /* Light background on hover */
+}
+
+.teacherPage-button-red {
+    background-color: rgba(69, 54, 245, 1);
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Transition effects */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.teacherPage-button-red:hover {
+    background-color: rgb(63, 49, 219); /* Darker red on hover */
+}
+
+.result-button-check{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.toggle-sidebar { 
+    display: none; 
+    /* Показываем кнопку для открытия сайдбара */ 
+} 
+
+.close-sidebar{
+    display: none;
+}
+
+.mobile{
+    display: none;
+}
+
+/* Стиль для попапа */
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    width: 90%; /* Установите ширину попапа на 90% */
+    max-width: 400px; /* Максимальная ширина для больших экранов */
+    overflow-y: auto; /* Добавьте прокрутку по вертикали, если контент превышает высоту */
+    max-height: 80%; /* Ограничьте высоту попапа */
+}
+
+.close {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.toggle-sidebar { 
+    display: none; 
+    /* Показываем кнопку для открытия сайдбара */ 
+} 
+
+.close-sidebar{
+    display: none;
+}
+
+.mobile{
+    display: none;
+}
+
+/* Стиль для попапа */
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    width: 90%; /* Установите ширину попапа на 90% */
+    max-width: 400px; /* Максимальная ширина для больших экранов */
+    overflow-y: auto; /* Добавьте прокрутку по вертикали, если контент превышает высоту */
+    max-height: 80%; /* Ограничьте высоту попапа */
+}
+
+.close {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+@media (max-width: 768px) { 
+    .homeWork-category-text p{
+        font-size: 12px;
+    }
+
+    .desktop {
+        display: none; /* Скрыть десктопную версию */
+    }
+    
+    .mobile {
+        display: block; /* Показать мобильную версию */
+        margin-bottom: 0px;
+    }
+
+    .homeWork-category-header {
+        padding: 10px 20px; /* Adjust padding for consistent size */
+        width: auto;
+        background-color: transparent;
+        border-radius: 20px; /* Rounded corners for top */
+        display: inline-block;
+        font-size: 24px;
+        color: rgba(69, 54, 245, 1);
+        cursor: pointer;
+    }
+ 
+    .body { 
+        overflow-x: hidden; 
+    } 
+ 
+    .homeWork-header-text { 
+        font-size: 24px; 
+        padding-left: 10px; 
+    } 
+ 
+    .notifications_main_text { 
+        font-size: 24px; 
+    } 
+ 
+    .homeWork-notifications { 
+        padding: 0px; 
+    } 
+
+    .homeWork-content-wrapper{
+        flex-direction: column;
+    }
+
+    .homeWork-sidebar{
+        padding: 20px;
+    }
+
+    .homeWork-category{
+        padding: 0px;
+    }
+ 
+    .wrapper { 
+        flex-direction: column; 
+        /* Изменяем направление на колонку */ 
+        max-width: 100vw; 
+        /* Ограничить ширину до 100% ширины окна */ 
+        overflow-x: hidden; 
+        /* Скрыть горизонтальную прокрутку */ 
+    }
+ 
+    .option_sidebar_wrapper { 
+        position: fixed; 
+        top: 0;
+        left: -100%;
+        width: 100%;
+        transition: left 0.3s ease; 
+        height: 100%;
+        z-index: 1000; 
+        /* Устанавливаем уровень z для сайдбара */ 
+    } 
+ 
+    .option_sidebar_wrapper.active { 
+        left: 0; 
+        /* Показываем сайдбар */ 
+    } 
+ 
+    .homeWork-content { 
+        padding: 30px 0px 0px 0px; 
+    } 
+ 
+    .toggle-sidebar { 
+        display: block; 
+        position: absolute; 
+        top: 5px; 
+        right: 10px; 
+        color: rgba(69, 54, 245, 1); 
+        border: none; 
+        border-radius: 5px; 
+        padding: 10px; 
+        cursor: pointer; 
+        z-index: 1; 
+        font-size: 24px;
+        background-color: transparent; 
+    } 
+
+    .teacherPage-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .teacherPage-button-red {
+        margin-bottom: 10px;
+    }
+
+    .close-sidebar {
+        display: block; 
+        position: absolute;
+        top: 5px; /* Отступ сверху */
+        right: 10px; /* Отступ справа */
+        font-size: 24px; /* Размер шрифта */
+        cursor: pointer; /* Курсор в виде указателя */
+        color: rgba(69, 54, 245, 1); /* Цвет крестика */
+        border: none; 
+        background-color: transparent; 
+    }
+
+    .scroll-notification {
+        max-height: 500px;
+        padding-right: 0px;
+    }
+
+    .scroll-notification::-webkit-scrollbar {
+        width: 0px;
+    }
+}

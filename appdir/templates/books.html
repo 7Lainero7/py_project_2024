@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .button, .delete-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .delete-button {
+            background-color: #f44336;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #fff;
+            margin: 10px auto;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 500px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 10px;
+        }
+        .book-details {
+            margin: 10px 0;
+        }
+        .roles {
+            margin-top: 10px;
+        }
+        .delete-form {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book List</h1>
+    <div class="button-container">
+        <a href="/create-book" class="button">Add New Book</a>
+    </div>
+    <ul>
+        {% for book in list_of_books %}
+            <li>
+                <form class="delete-form" action="/delete/{{ book.id }}" method="post">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="delete-button">Delete</button>
+                </form>
+                <h2>{{ book.name }}</h2>
+                <div class="book-details">
+                    <p>Published Year: {{ book.published_year }}</p>
+                    <p>Roles:</p>
+                    <ul class="roles">
+                        {% for role in book.roles %}
+                            <li>{{ role.role }}: {{ role.name }}</li>
+                        {% endfor %}
+                    </ul>
+                    <img src="{{ book.images[0].image_url }}" alt="{{ book.name }}">
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

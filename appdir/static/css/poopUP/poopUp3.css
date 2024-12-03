@@ -1,0 +1,261 @@
+.popup {
+    display: none; /* Скрыт по умолчанию */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content-noadaptive {
+    background-color: rgba(242, 245, 252, 1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    width: 30%;
+    height: auto; /* Изменено на auto для автоматической высоты */
+    position: relative;
+}
+
+.popup-content-noadaptive-special {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 70%;
+    height: auto; /* Изменено на auto для автоматической высоты */
+    position: relative;
+}
+
+.popup-button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: rgba(69, 54, 245, 1);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.popup-button-delete {
+    width: 70%;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: rgba(208, 60, 83, 1);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.popup-button-noadaptive {
+    display: flex;
+    padding: 10px 30px 10px 30px;
+    margin-top: 10px;
+    background-color: rgba(69, 54, 245, 1);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.popup-buttons{
+    padding: 0px 10px 20px 10px;
+}
+
+.popup-buttons input{
+    width: 100%;
+    border: none;
+    padding: 15px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.popup-buttons-radio input{
+    border: none;
+    padding: 25px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.big-text{
+    width: 100%;
+    border: none;
+    padding: 15px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    outline: none;
+    height: 150px;
+    resize: none;
+}
+
+.popup-buttons textarea{
+    width: 100%;
+    border: none;
+    padding: 15px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.duble {
+    display: flex; /* Используем flexbox для расположения элементов в одну строку */
+    justify-content: space-between; /* Распределяем пространство между элементами */
+    width: 100%; /* Устанавливаем ширину контейнера */
+}
+
+.duble-info {
+    display: flex;
+    flex-direction: column; /* Устанавливаем направление колонок для метки и элемента ввода */
+    flex: 1; /* Элементы будут занимать равное пространство */
+    margin-right: 20px; /* Отступ между элементами, если нужно */
+}
+
+.duble-info:last-child {
+    margin-right: 0; /* Убираем отступ у последнего элемента */
+}
+
+.duble-info p {
+    margin: 0; /* Убираем отступы у p, чтобы они были ближе к select/input */
+    font-size: 16px; /* Устанавливаем размер шрифта, если нужно */
+}
+
+.duble-info-radio{
+    display: flex;
+    justify-content: space-between; /* Распределяет пространство между элементами */
+    align-items: center; /* Выравнивает элементы по центру по вертикали */
+    margin-bottom: 10px; /* Отступ между строками */
+    padding: 8px;
+}
+
+.duble-info-radio p {
+    margin: 0; /* Убирает отступы у элемента p */
+}
+
+.duble-info-radio input[type="radio"] {
+    margin-left: auto; /* Отступ между радио-кнопкой и текстом */
+}
+
+.popup-buttons-section{
+    display: flex;
+}
+
+.close-popup {
+    background-color: rgba(93, 181, 97, 1);
+}
+
+.popup-content-noadaptive h2{
+    font-size: 40px;
+    font-weight: 500;
+    padding: 20px 20px 20px 10px;
+    text-align: left;
+}
+
+.popup-content-noadaptive-special h2{
+    font-size: 40px;
+    font-weight: 500;
+    padding: 20px 20px 20px 10px;
+    text-align: left;
+}
+
+.popup-content-noadaptive select{
+    border: none;
+    background: rgb(255, 255, 255) url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>') no-repeat right 12px center;
+    background-size: 16px 16px;
+    padding: 15px;
+    padding-right: 30px;
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+    appearance: none;
+    margin-bottom: 5px;
+}
+
+.custom-select::after{
+    right: 10px;
+}
+
+.popup-content-noadaptive select:focus {
+    outline: none;
+}
+
+.popup-content-noadaptive p{
+    font-size: 16px;
+    text-align: left;
+}
+
+.p-one{
+    padding-top: 20px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.teachers-name{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.for-flex {
+    display: flex; /* Используем flexbox */
+    justify-content: space-between; /* Распределяем пространство между элементами */
+    max-width: 1200px;
+}
+
+.popup-info {
+    display: flex; /* Используем flexbox для вертикального выравнивания */
+    flex-direction: column; /* Устанавливаем направление колонок */
+    justify-content: space-between; /* Распределяем пространство между элементами */
+    padding: 10px;
+    text-align: left;
+    background-color: rgba(242, 245, 252, 1);
+    flex: 0 0 23%; /* Элементы будут занимать 23% ширины контейнера */
+    margin: 10px; /* Добавляем отступы между элементами */
+    box-sizing: border-box; /* Учитываем отступы в ширине */
+    border-radius: 10px;
+    width: 290px;
+    height: 335px;
+}
+
+.performance-header-row-pop {
+    display: grid;
+    grid-template-columns: 1.8fr 0.5fr 0.5fr 0.5fr;
+    padding: 10px;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.performance-header-row-pop {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+}
+
+.performance-row-pop {
+    display: grid;
+    grid-template-columns: 1.8fr 0.5fr 0.5fr 0.5fr;
+    padding: 10px;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: #f2f5fc;
+    justify-items: start;
+}
+
+.sorting-options-pop{
+    display: flex;
+    justify-content: left;
+    margin-bottom: 10px;
+}

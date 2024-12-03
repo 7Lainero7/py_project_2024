@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/MainPage.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/poopUP/poopUp1.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/poopUP/poopUp2.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/poopUP/poopUp3.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/performance.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vela+Sans+GX:wght@400;700&display=swap">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const submitButton = document.querySelector('#full-width-button');
+
+            submitButton.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                const authorSelect = document.querySelector('.author-select').value;
+                const publishedYear = document.querySelector('.published-year-input').value;
+                const publisherSelect = document.querySelector('.publisher-select').value;
+                const bookName = document.querySelector('.book-name-input').value;
+                const imageUrl = document.querySelector('.image-url-input').value;
+
+                const data = {
+                    authorId: authorSelect,
+                    publishedYear: publishedYear,
+                    publisherId: publisherSelect,
+                    bookName: bookName,
+                    imageUrl: imageUrl
+                };
+
+                fetch('/create/book', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Книга успешно добавлена!');
+                            window.location.reload();
+                        } else {
+                            alert('Ошибка добавления книги: ' + data.message);
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Ошибка:', error);
+                    });
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const submitButton = document.querySelector('#worker-submit-button');
+
+            submitButton.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                const workerName = document.querySelector('.worker-name-input').value;
+
+                const data = {
+                    name: workerName
+                };
+
+                fetch('/create/worker', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Автор или публикатор успешно добавлен!');
+                            window.location.reload();
+                        } else {
+                            alert('Ошибка добавления автора или публикатора: ' + data.message);
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Ошибка:', error);
+                    });
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const notificationItems = document.querySelectorAll('.notification-item');
+
+            notificationItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    const bookId = this.dataset.bookId;
+                    window.location.href = `/book/${bookId}`;
+                });
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const submitButton = document.querySelector('#register-submit-button');
+
+            submitButton.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                const email = document.querySelector('.email-input').value;
+                const username = document.querySelector('.username-input').value;
+
+                const data = {
+                    email: email,
+                    username: username
+                };
+
+                fetch('/create/user', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Пользователь успешно зарегистрирован!');
+                            window.location.reload();
+                        } else {
+                            alert('Ошибка регистрации: ' + data.message);
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Ошибка:', error);
+                    });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <script src="{{ url_for('static', filename='js/sidebar.js') }}"></script>
+    <div class="wrapper">
+        <!-- Сайдбар -->
+        <button class="toggle-sidebar">≡</button>
+        <div class="option_sidebar_wrapper">
+
+            <button class="close-sidebar">✖</button>
+            <!-- Главная страница -->
+            <div class="sidebar-item_main">
+                <a href="/books">
+                    <div class="sidebar-content">
+                        <span class="sidebar-text">Главная страница</span>
+                    </div>
+                </a>
+            </div>
+            <!-- Остальные элементы сайдбара -->
+            <div class="sidebar-items">
+                <div class="sidebar-item">
+                    <a href="#">
+                        <div class="sidebar-content">
+                            <div class="sidebar-icon">
+                                <img src="{{ url_for('static', filename='image/plus.svg') }}">
+                            </div>
+                            <span id="open-popup1" class="sidebar-text">Добавить книгу</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="#">
+                        <div class="sidebar-content">
+                            <div class="sidebar-icon">
+                                <img src="{{ url_for('static', filename='image/plus.svg') }}">
+                            </div>
+                            <span id="open-popup3" class="sidebar-text">Добавить автора\публикатора</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="#">
+                        <div class="sidebar-content">
+                            <div class="sidebar-icon">
+                                <img src="{{ url_for('static', filename='image/plus.svg') }}">
+                            </div>
+                            <span id="open-popup2" class="sidebar-text">Добавить пользователя</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Основной контент -->
+        <div class="main-content">
+
+
+            <!-- <button id="open-popup13">Открыть поп-ап13</button> -->
+
+
+            <!-- Поп-ап -->
+            <div class="popup" id="popup1">
+                <div class="popup-content-noadaptive">
+                    <button class="close-sidebar14">✖</button>
+                    <h2>Добавление Книги</h2>
+                    <div class="popup-buttons">
+                        <div class="duble-info">
+                            <p>Автор</p>
+                            <select class="author-select">
+                                {% for worker in list_front_workers %}
+                                <option value="{{worker.id}}">{{worker.name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="duble">
+                            <div class="duble-info">
+                                <p>Год выпуска</p>
+                                <input type="date" class="published-year-input" required></input>
+                            </div>
+                            <div class="duble-info">
+                                <p>Издатель</p>
+                                <select class="publisher-select">
+                                    {% for worker in list_front_workers %}
+                                    <option value="{{worker.id}}">{{worker.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <p>Название книги</p>
+                        <input type="text" class="book-name-input" required></input>
+                        <p>Картинка</p>
+                        <input type="url" class="image-url-input" required></input>
+                        <div class="popup-buttons-section">
+                            <button class="popup-button-noadaptive" id="full-width-button">Создать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup" id="popup2">
+                <div class="popup-content-noadaptive">
+                    <button class="close-sidebar15">✖</button>
+                    <h2>Регистрация нового пользователя</h2>
+                    <div class="popup-buttons">
+                        <div class="duble-info">
+                            <p>Email</p>
+                            <input type="email" class="email-input" required></input>
+                        </div>
+                        <div class="duble-info">
+                            <p>Имя пользователя</p>
+                            <input type="text" class="username-input" required></input>
+                        </div>
+                        <div class="popup-buttons-section">
+                            <button class="popup-button-noadaptive" id="register-submit-button">Создать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup" id="popup3">
+                <div class="popup-content-noadaptive">
+                    <button class="close-sidebar16">✖</button>
+                    <h2>Добавление автора или публикатора</h2>
+                    <div class="popup-buttons">
+                        <p>ФИО Автора\Название Публикатора</p>
+                        <input type="text" class="worker-name-input"></input>
+                        <div class="popup-buttons-section">
+                            <button class="popup-button-noadaptive" id="worker-submit-button">Создать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <header class="header_main_page">
+                <div class="header_main_page_text">Главная страница</div>
+            </header>
+
+            <div class="stats">
+                <div class="stat-item completed">
+                    <div class="decorative-block-start">
+                        <img src="{{ url_for('static', filename='image/decorative-start.svg') }}" alt="Частые вопросы"
+                            class="decorative-start-svg">
+                    </div>
+                    <div class="decorative-block">
+                        <img src="{{ url_for('static', filename='image/decorative.svg') }}" alt="Частые вопросы"
+                            class="decorative-svg">
+                    </div>
+                    <h2 class="stat_count">{{book_count}}</h2>
+                    <p class="stat_name">Книг в списке</p>
+                </div>
+                <div class="stat-item pending">
+                    <div class="decorative-block-start">
+                        <img src="{{ url_for('static', filename='image/decorative-start.svg') }}" alt="Частые вопросы"
+                            class="decorative-start-svg">
+                    </div>
+                    <div class="decorative-block">
+                        <img src="{{ url_for('static', filename='image/decorative.svg') }}" alt="Частые вопросы"
+                            class="decorative-svg">
+                    </div>
+                    <h2 class="stat_count">{{user_count}}</h2>
+                    <p class="stat_name">Пользователей</p>
+                </div>
+                <div class="stat-item reviewing">
+                    <div class="decorative-block-start">
+                        <img src="{{ url_for('static', filename='image/decorative-start.svg') }}" alt="Частые вопросы"
+                            class="decorative-start-svg">
+                    </div>
+                    <div class="decorative-block">
+                        <img src="{{ url_for('static', filename='image/decorative.svg') }}" alt="Частые вопросы"
+                            class="decorative-svg">
+                    </div>
+                    <h2 class="stat_count">{{publ_auth}}</h2>
+                    <p class="stat_name">Авторов и издательств</p>
+                </div>
+            </div>
+
+            <div class="notifications">
+                <h3 class="notifications_main_text">Список книг</h3>
+                <div class="scroll-notification">
+                    <div class="container">
+                        {% for book in list_of_books %}
+                        <div class="notification-item" data-book-id="{{ book.id }}">
+                            <div class="background_circle_icon_exclamation">
+                                <div class="inside_circle_icon_whitestar">
+                                    <img src="{{ url_for('static', filename='image/whitestar.svg') }}"
+                                        alt="Белая звезда">
+                                </div>
+                            </div>
+                            <div class="notification-item_content">
+                                <div class="notification-item_text">Название книги: {{ book.name }}</div>
+                                <div class="notification_item_options">
+                                    {% for role in book.roles %}
+                                    {% if role.role == "author" %}
+                                    <span class="notification_item_option">Автор: {{ role.name }}</span>
+                                    <span class="notification_item_option_last">Перейти</span>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const openPopupButton1 = document.getElementById('open-popup1');
+            const popup1 = document.getElementById('popup1');
+            const closePopupButton1 = document.querySelector('.close-sidebar14');
+
+            openPopupButton1.addEventListener('click', () => {
+                popup1.style.display = 'flex'; // Показываем поп-ап
+            });
+
+            closePopupButton1.addEventListener('click', () => {
+                popup1.style.display = 'none'; // Скрываем поп-ап
+            });
+
+            //
+
+            const openPopupButton2 = document.getElementById('open-popup2');
+            const popup2 = document.getElementById('popup2');
+            const closePopupButton2 = document.querySelector('.close-sidebar15');
+
+            openPopupButton2.addEventListener('click', () => {
+                popup2.style.display = 'flex'; // Показываем поп-ап
+            });
+
+            closePopupButton2.addEventListener('click', () => {
+                popup2.style.display = 'none'; // Скрываем поп-ап
+            });
+
+            //
+
+            const openPopupButton3 = document.getElementById('open-popup3');
+            const popup3 = document.getElementById('popup3');
+            const closePopupButton3 = document.querySelector('.close-sidebar16');
+
+            openPopupButton3.addEventListener('click', () => {
+                popup3.style.display = 'flex'; // Показываем поп-ап
+            });
+
+            closePopupButton3.addEventListener('click', () => {
+                popup3.style.display = 'none'; // Скрываем поп-ап
+            });
+
+            const openPopupButton4 = document.getElementById('open-popup4');
+            const popup4 = document.getElementById('popup4');
+            const closePopupButton4 = document.querySelector('.close-sidebar17');
+
+            openPopupButton4.addEventListener('click', () => {
+                popup4.style.display = 'flex'; // Показываем поп-ап
+            });
+
+            closePopupButton4.addEventListener('click', () => {
+                popup4.style.display = 'none'; // Скрываем поп-ап
+            });
+
+        </script>
+
+</body>
+
+</html>

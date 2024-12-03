@@ -1,0 +1,198 @@
+.popup3 {
+    display: none; /* Скрыт по умолчанию */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content3 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 567px;
+    height: 570px;
+    text-align: center;
+    position: relative;
+}
+
+.popup-content4 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 567px;
+    height: 600px;
+    text-align: center;
+    position: relative;
+}
+
+.popup-button3 {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: rgba(69, 54, 245, 1);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.popup-button3-green {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: rgba(69, 54, 245, 1);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.popup-buttons3{
+    padding: 0px 00px 0px 0px;
+}
+
+.close-popup {
+    background-color: rgba(93, 181, 97, 1);
+}
+
+.close-sidebar2 {
+    top: 5px; /* Расположение сверху */
+    right: 10px; /* Расположение справа */
+    display: block; 
+    position: absolute;
+    font-size: 24px; /* Размер шрифта */
+    cursor: pointer; /* Курсор в виде указателя */
+    color: black;
+    border: none; 
+    background-color: transparent; 
+}
+
+.popup-content3 h2{
+    font-size: 40px;
+    font-weight: 500;
+    padding: 10px;
+    text-align: left;
+}
+
+.popup-content3 h3{
+    font-size: 20px;
+    font-weight: 800;
+    padding-left: 10px;
+}
+
+.popup-content3 p{
+    font-size: 18px;
+    color: rgba(80, 77, 82, 1);
+    padding: 10px;
+    text-align: left;
+}
+
+.popup-content4 h2{
+    font-size: 40px;
+    font-weight: 500;
+    padding: 10px;
+    text-align: left;
+}
+
+.popup-content4 h3{
+    font-size: 20px;
+    font-weight: 800;
+    padding-left: 10px;
+}
+
+.popup-content4 p{
+    font-size: 18px;
+    color: rgba(80, 77, 82, 1);
+    padding: 10px;
+    text-align: left;
+}
+
+.popup-info3{
+    padding: 10px 10px 10px 10px;
+    text-align: left;
+    background-color: rgba(242, 245, 252, 1);
+    height: 320px;
+    border-radius: 10px;
+}
+
+.popup-info4{
+    padding: 10px 10px 10px 10px;
+    text-align: left;
+    background-color: rgba(242, 245, 252, 1);
+    height: 320px;
+    border-radius: 10px;
+}
+
+.close-sidebar3 {
+    top: 5px; /* Расположение сверху */
+    right: 10px; /* Расположение справа */
+    display: block; 
+    position: absolute;
+    font-size: 24px; /* Размер шрифта */
+    cursor: pointer; /* Курсор в виде указателя */
+    color: black;
+    border: none; 
+    background-color: transparent; 
+}
+
+.close-sidebar5 {
+    top: 5px; /* Расположение сверху */
+    right: 10px; /* Расположение справа */
+    display: block; 
+    position: absolute;
+    font-size: 24px; /* Размер шрифта */
+    cursor: pointer; /* Курсор в виде указателя */
+    color: black;
+    border: none; 
+    background-color: transparent; 
+}
+
+.svg_pop{
+    padding-right: 5px;
+}
+
+@media (max-width: 600px) {
+    .popup-content3 {
+        width: 90%; /* Ширина поп-апа на мобильных устройствах */
+        padding: 15px; /* Уменьшение отступов */
+    }
+
+    .popup-content3 h2 {
+        font-size: 28px; /* Уменьшение размера заголовка */
+    }
+
+    .popup-content3 p {
+        font-size: 14px; /* Уменьшение размера текста */
+    }
+
+    .popup-content4 {
+        width: 90%; /* Ширина поп-апа на мобильных устройствах */
+        padding: 15px; /* Уменьшение отступов */
+        height: auto;
+    }
+
+    .popup-info4{
+        padding: 10px 10px 10px 10px;
+        text-align: left;
+        background-color: rgba(242, 245, 252, 1);
+        height: 370px;
+        border-radius: 10px;
+    }
+
+    .popup-content4 h2 {
+        font-size: 28px; /* Уменьшение размера заголовка */
+    }
+
+    .popup-content4 p {
+        font-size: 14px; /* Уменьшение размера текста */
+    }
+
+    .close-sidebar2 {
+        font-size: 20px; /* Уменьшение размера кнопки закрытия */
+    }
+}
